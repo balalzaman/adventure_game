@@ -53,17 +53,6 @@
     <div id="map"></div>
 </body>
 <script>
-    // function look(position){
-    //     result = null
-    //     sprites.forEach(s=>{
-    //         if(s.position.x == position.x && s.position.y == position.y ){
-    //             if(null == result){
-    //                 result = s; 
-    //             }
-    //         }
-    //     })
-    //     return result;
-    // }
      let sprites = [
         {
                 name: "hero",
@@ -136,7 +125,7 @@
             })
         }
 
-    lives = 3
+    lifes = 3
 
     MODE = "images"
     function render(){ //DRAW
@@ -158,9 +147,11 @@
         })
         score.innerHTML = sprites[0].score
         
-        output = ""
-        for(life=0; life < lives; life++){
-            output += "@";
+        if(lifes == 3
+        )
+        output = "Life(s):"
+        for(life=0; life < lifes; life++){
+            output += "0"
         }
         stats.innerHTML = output
     }
@@ -196,7 +187,7 @@
                     sprites[0].score += what.points
                     remove(what)
                 }else{
-                    lives -= 1
+                    lifes -= 1
                 }
             }
             render();
